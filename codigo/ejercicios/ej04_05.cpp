@@ -7,13 +7,17 @@ using namespace std;
 
 // v se recibe por valor, es decir, recibe una copia del array original
 // Es seguro pero puede afectar al rendimiento dependiendo del tamaño
-void muestra_array(array<double, 5> v) {
+// void muestra_array(array<double, 5> v) {
+
+// La forma mas correcta de pasar un objeto es por referencia y constante si no se necesta
+// modificar en la función
+void muestra_array(const array<double, 5>& v) {
     cout << "[";
     for (int i = 0; i < v.size() - 1; i++) {
         cout << v.at(i) << ", ";
     }
     cout << v.at(v.size() - 1) << "]" << endl;
-    v.at(0) = 9999; // No modifica el original ya que lo recibe por valor
+    //v.at(0) = 9999; // No modifica el original ya que lo recibe por valor
 }
 
 //
