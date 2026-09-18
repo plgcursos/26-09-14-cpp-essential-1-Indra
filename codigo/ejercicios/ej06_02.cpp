@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 // Definir una estructura Punto, que represente un punto el plano, con las coordenadas x e y. 
@@ -21,13 +22,21 @@ void mostrar(const Punto& p) {
 }
 
 double distancia(const Punto& p1, const Punto& p2) {
-    //-----------------------------------------------
+    return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
 }
 
 int main() {
     cout << "Punto A" << endl;
     Punto a = leer();
+
+    cout << "Punto B" << endl;
+    Punto b = leer();
+
     mostrar(a);
+    mostrar(b);
+
+    double dist = distancia(a, b);
+    cout << "Distancia: " << dist << endl;
     
 
     return 0;
